@@ -10,7 +10,11 @@ const app = express()
 
 //Middleware
 app.use(express.json())
-app.use(cors());
+
+// CORS configuration
+app.use(cors({
+  origin: 'https://mernalbum-frontend.onrender.com',
+}));
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -18,9 +22,8 @@ app.use((req, res, next) => {
 })
  
 //Routes
-app.use("/api/comments",commentRoutes)
+app.use("/api/comments", commentRoutes)
 app.use("/api/user", userRoutes)
-
 
 //Connect to db
 mongoose.connect(process.env.MONGO_URI)
@@ -28,8 +31,8 @@ mongoose.connect(process.env.MONGO_URI)
         //Listen for requests
         app.listen(process.env.PORT, () => {
             console.log("Connected to the database & listening on port", process.env.PORT)
-})
+        })
     })
-    .catch ((error) => {
+    .catch((error) => {
         console.log(error)
     })
