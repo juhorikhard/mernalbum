@@ -34,14 +34,16 @@ const CommentForm = ({ addComment }) => {
      };
 
      // Send POST request to add comment
-     const response = await fetch("/api/comments", {
-       method: "POST",
-       headers: {
-         "Content-Type": "application/json",
-         "Authorization": `Bearer ${user.token}`
-       },
-       body: JSON.stringify(commentData)
-     });
+     // Send POST request to add comment
+      const response = await fetch("https://mernalbum-backend.onrender.com/api/comments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.token}`
+        },
+        body: JSON.stringify(commentData)
+      });
+
 
      const json = await response.json();
 

@@ -12,7 +12,7 @@ const Home = () => {
    const fetchComments = async () => {
      try {
        // Get comments from API
-       const response = await fetch("/api/comments", {
+       const response = await fetch("https://mernalbum-backend.onrender.com/api/comments", {
          headers: {
            'Authorization': `Bearer ${user.token}`
          }
@@ -38,7 +38,7 @@ const Home = () => {
 
    try {
      // Send DELETE request to API
-     const response = await fetch(`/api/comments/${commentId}`, {
+     const response = await fetch(`https://mernalbum-backend.onrender.com/api/comments/${commentId}`, {
        method: 'DELETE',
        headers: {
          'Authorization': `Bearer ${user.token}`,
