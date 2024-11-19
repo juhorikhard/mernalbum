@@ -9,5 +9,4 @@ Acccess the live application here: [MERN Album Review App](https://mernalbum-fro
 ## Features
 - User Authentication (Register/Login)
 - Add and delete album reviews
-- Rate albums and add comments
 - Responsive design
